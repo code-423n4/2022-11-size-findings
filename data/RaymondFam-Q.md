@@ -59,3 +59,17 @@ Consider indexing parameters for events, serving as logs filter when looking for
 
 https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L97-L122
 
+## Inadequate NatSpec
+Solidity contracts can use a special form of comments, i.e., the Ethereum Natural Language Specification Format (NatSpec) to provide rich documentation for functions, return variables and more. Please visit the following link for further details:
+
+https://docs.soliditylang.org/en/v0.8.16/natspec-format.html
+
+Here are some of the instances entailed that are devoid of useful comments:
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L28-L43
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L466-L480
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L28-L34
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L40-L48
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L63-L68
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L86-L91
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L97-L122
