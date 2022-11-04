@@ -120,3 +120,36 @@ PUSH1 [revert offset]
 JUMPI
 
 Disclaimer: There have been several bugs with security implications related to optimizations. For this reason, Solidity compiler optimizations are disabled by default, and it is unclear how many contracts in the wild actually use them. Therefore, it is unclear how well they are being tested and exercised. High-severity security issues due to optimization bugs have occurred in the past . A high-severity bug in the emscripten -generated solc-js compiler used by Truffle and Remix persisted until late 2018. The fix for this bug was not reported in the Solidity CHANGELOG. Another high-severity optimization bug resulting in incorrect bit shift results was patched in Solidity 0.5.6. Please measure the gas savings from optimizations, and carefully weigh them against the possibility of an optimization-related bug. Also, monitor the development and adoption of Solidity compiler optimizations to assess their maturity.
+
+## `uint256` Can be Cheaper Than `uint8` and Other Unsigned Integer Type of Smaller Bit Size
+When dealing with function arguments or memory values, there is no inherent benefit because the compiler does not pack these values. Your contract’s gas usage may be higher because the EVM operates on 32 bytes at a time. Therefore, if the element is smaller than that, the EVM must use more operations in order to reduce the size of the element from 32 bytes to the desired size. The EVM needs to properly enforce the limits of this smaller type.
+
+It is only more efficient when you can pack variables of uint8, uint16, uint32, uint64, ... into the same storage slot with other neighboring variables smaller than 32 bytes. Here are some of the instances entailed:
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L124
+
+## Unchecked SafeMath Saves Gas
+"Checked" math, which is default in ^0.8.0 is not free. The compiler will add some overflow checks, somehow similar to those implemented by `SafeMath`. While it is reasonable to expect these checks to be less expensive than the current `SafeMath`, one should keep in mind that these checks will increase the cost of "basic math operation" that were not previously covered. This particularly concerns variable increments in for loops. When no arithmetic overflow/underflow is going to happen, `unchecked { ++i ;}` to use the previous wrapping behavior further saves gas just as in the for loop below as an example:
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L302-L305
+
+```
+        for (uint256 i; i < seenBidMap.length - 1; ) {
+          if (seenBidMap[i] != type(uint256).max) {
+              revert InvalidState();
+          }
+
+          unchecked {
+              ++i;
+          }
+        }
+```
+## `abi.encode()` Costs More Gas Than `abi.encodePacked()`
+Changing `abi.encode()` to `abi.encodePacked()` can save gas considering the former pads extra null bytes at the end of the call data, which is unnecessary. Please visit the following the link delineating how `abi.encodePacked()` is more gas efficient in general:
+
+https://github.com/ConnorBlockchain/Solidity-Encode-Gas-Comparison
+
+Here is one of the instances entailed:
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L467
+
