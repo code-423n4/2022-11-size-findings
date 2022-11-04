@@ -153,3 +153,21 @@ Here is one of the instances entailed:
 
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L467
 
+## Use of Named Returns for Local Variables Saves Gas
+You can have further advantages in term of gas cost by simply using named return values as temporary local variable. As an example, the following instance of code block can refactored as follows:
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L466-L468
+
+```
+    function computeCommitment(bytes32 message) public pure returns (bytes32 commitmentHash) {
+        commitmentHash = keccak256(abi.encode(message));
+    }
+```
+## += and -= Costs More Gas
+`+=` generally costs 22 more gas than writing out the assigned equation explicitly. The amount of gas wasted can be quite sizable when repeatedly operated in a loop. As an example, the following line of code could be rewritten as:
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L294
+
+```
+            data.filledBase = data.filledBase + baseAmount;
+```
