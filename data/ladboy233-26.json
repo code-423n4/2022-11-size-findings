@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "The code may have issue supporting token with decimal smaller than 18 or larger than 18.",
+  "issueId": 26,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/26"
+}
