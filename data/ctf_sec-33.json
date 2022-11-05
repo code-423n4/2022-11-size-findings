@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "ctf_sec",
+  "risk": "2",
+  "title": " SOLMATE SAFETRANSFER AND SAFETRANSFERFROM DOES NOT CHECK THE CODESIZE OF THE TOKEN ADDRESS, WHICH MAY LEAD TO FUND LOSS",
+  "issueId": 33,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/33"
+}
