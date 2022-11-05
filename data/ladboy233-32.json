@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "Seller can set malicious base token and quote token to rug the buyer.",
+  "issueId": 32,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/32"
+}
