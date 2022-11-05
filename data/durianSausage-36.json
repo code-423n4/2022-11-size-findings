@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "durianSausage",
+  "risk": "2",
+  "title": "M01: RETURN VALUES OF TRANSFER()/TRANSFERFROM() NOT CHECKED",
+  "issueId": 36,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/36"
+}
