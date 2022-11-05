@@ -12,6 +12,11 @@
 Mark data types as `calldata` instead of `memory` where possible. This makes it so that the data is not automatically loaded into memory. If the data passed into the function does not need to be changed (like updating values in an array), it can be passed in as `calldata`. The one exception to this is if the argument must later be passed into another function that takes an argument that specifies `memory` storage. 
 ### Lines
 - SizeSealed.sol:217
+### Lines
+- ECCMath.sol:25
+- ECCMath.sol:37
+- ECCMath.sol:60
+- ECCMath.sol:51
 
 ## Mark functions as payable (with discretion)
 You can mark public or external functions as payable to save gas. Functions that are not payable have additional logic to check if there was a value sent with a call, however, making a function payable eliminates this check. This optimization should be carefully considered due to potentially unwanted behavior when a function does not need to accept ether.
@@ -29,3 +34,10 @@ You can mark public or external functions as payable to save gas. Functions that
 - SizeSealed.sol:358
 - SizeSealed.sol:466
 - SizeSealed.sol:478
+
+## Consider marking constants as private
+
+Marking constant variables in storage as constant saves gas. Unless a constant variable should be easily accessible by another protocol or offchain logic, consider marking it as private.
+### Lines
+- ECCMath.sol:8
+- ECCMath.sol:9
