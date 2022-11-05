@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "Lack of support for fee-on-transfer token when creating bids.",
+  "issueId": 17,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/17"
+}
