@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": "Bidder can DOS the auction by creating 1000 bids, then cancel 1000 bids, or provide 1000 bids with invalid commit message to fill in the bidding slot",
+  "issueId": 21,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/21"
+}
