@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "0x52",
+  "risk": "2",
+  "title": "Auction deosn't support fee on transfer tokens as the quote token",
+  "issueId": 23,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/23"
+}
