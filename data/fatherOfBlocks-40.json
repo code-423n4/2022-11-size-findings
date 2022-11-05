@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "fatherOfBlocks",
+  "risk": "3",
+  "title": "inconsistency in withdraws() due to lack of validation in the creation of an auction",
+  "issueId": 40,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/40"
+}
