@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "ctf_sec",
+  "risk": "2",
+  "title": " Auction Creator can cancel auction even after the auction finished to toy with the bidder's fund.",
+  "issueId": 25,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/25"
+}
