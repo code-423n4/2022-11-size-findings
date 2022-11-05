@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "8olidity",
+  "risk": "2",
+  "title": "cancelAuction() can be called after finalize()",
+  "issueId": 15,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/15"
+}
