@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "ladboy233",
+  "risk": "2",
+  "title": " Seller may choose to never reveal the private key to finalize the auction and lock user's bid fund up to 24 hours after the end timestamp",
+  "issueId": 22,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/22"
+}
