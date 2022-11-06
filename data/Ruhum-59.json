@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Ruhum",
+  "risk": "2",
+  "title": "Allowing an user to bid on cancelled auctions will result in unnecessary gas costs",
+  "issueId": 59,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/59"
+}
