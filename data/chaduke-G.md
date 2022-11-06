@@ -5,3 +5,6 @@ if (quoteAmount == type(uint128).max || (quoteAmount < a.params.minimumBidQuote)
             revert InvalidBidAmount();
 }
 ```
+G2. https://github.com/code-423n4/2022-11-size/blob/706a77e585d0852eae6ba0dca73dc73eb37f8fb6/src/SizeSealed.sol#L280
+change *continue* to *break* since all future ``quotePerbase`` will be even smaller or equal, no need to continue. This will save much gas.
+
