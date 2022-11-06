@@ -26,7 +26,7 @@ modifier atState(Auction storage a, States _state) {
 
 **SizeSealed.sol - lines 156 to 159**
 To save gas on complicated calculations, following test can be made earlier, 
-on second line of this function, between lines 131 and 132
+on second line of the **bid** function, between lines 131 and 132
 ```
         // Max of 1000 bids on an auction to prevent DOS
         if (bidIndex >= 1000) {
