@@ -30,3 +30,6 @@ for the modifier ``atState``, we can cache ``a.times.startTimestamp`` and ``a.ti
 
 G8.  https://github.com/code-423n4/2022-11-size/blob/706a77e585d0852eae6ba0dca73dc73eb37f8fb6/src/SizeSealed.sol#L376
 Cache ``b.quoteAmount`` as it is accessed twice.
+
+G9. https://github.com/code-423n4/2022-11-size/blob/706a77e585d0852eae6ba0dca73dc73eb37f8fb6/src/SizeSealed.sol#L425
+Cache ``a.timing.endTimestamp`` as it is accessed twice
