@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Lambda",
+  "risk": "2",
+  "title": "Fee-on-transfer quote tokens not correctly handled",
+  "issueId": 63,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/63"
+}
