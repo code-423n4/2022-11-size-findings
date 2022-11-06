@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "KingNFT",
+  "risk": "3",
+  "title": "ERC20 extension tokens with callback hook can be stolen by reentrance attack",
+  "issueId": 54,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/54"
+}
