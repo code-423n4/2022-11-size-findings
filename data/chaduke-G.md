@@ -1,0 +1,7 @@
+G1: https://github.com/code-423n4/2022-11-size/blob/706a77e585d0852eae6ba0dca73dc73eb37f8fb6/src/SizeSealed.sol#L144-L146
+Since ``quoteAmount < a.params.minimumBidQuote`` already covers the case ``quoteAmount == 0``, so we can drop condition 1 to save gas
+```
+if (quoteAmount == type(uint128).max || (quoteAmount < a.params.minimumBidQuote)) {
+            revert InvalidBidAmount();
+}
+```
