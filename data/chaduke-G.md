@@ -8,3 +8,7 @@ if (quoteAmount == type(uint128).max || (quoteAmount < a.params.minimumBidQuote)
 G2. https://github.com/code-423n4/2022-11-size/blob/706a77e585d0852eae6ba0dca73dc73eb37f8fb6/src/SizeSealed.sol#L280
 change *continue* to *break* since all future ``quotePerbase`` will be even smaller or equal, no need to continue. This will save much gas.
 
+G3: https://github.com/code-423n4/2022-11-size/blob/706a77e585d0852eae6ba0dca73dc73eb37f8fb6/src/SizeSealed.sol#L223
+The privateKey == 0 check should be performed at the beginning of the ``reveal`` function to save gas.
+
+
