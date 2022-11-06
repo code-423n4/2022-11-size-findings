@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Lambda",
+  "risk": "2",
+  "title": "Withdraw can fail for some ERC20 tokens",
+  "issueId": 66,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/66"
+}
