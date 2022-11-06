@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Bnke0x0",
+  "risk": "2",
+  "title": "Solmate safetransfer and safetransferfrom does not check the code size of the token address, which may lead to funding loss",
+  "issueId": 72,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/72"
+}
