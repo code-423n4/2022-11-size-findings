@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "hansfriese",
+  "risk": "2",
+  "title": "The auction wouldn't work properly when the quote token is a `fee-on-transfer` token.",
+  "issueId": 98,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/98"
+}
