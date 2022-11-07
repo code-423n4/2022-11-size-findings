@@ -126,7 +126,7 @@ When dealing with function arguments or memory values, there is no inherent bene
 
 It is only more efficient when you can pack variables of uint8, uint16, uint32, uint64, ... into the same storage slot with other neighboring variables smaller than 32 bytes. Here are some of the instances entailed:
 
-https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L124
+https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L48-L50
 
 ## Unchecked SafeMath Saves Gas
 "Checked" math, which is default in ^0.8.0 is not free. The compiler will add some overflow checks, somehow similar to those implemented by `SafeMath`. While it is reasonable to expect these checks to be less expensive than the current `SafeMath`, one should keep in mind that these checks will increase the cost of "basic math operation" that were not previously covered. This particularly concerns variable increments in for loops. When no arithmetic overflow/underflow is going to happen, `unchecked { ++i ;}` to use the previous wrapping behavior further saves gas just as in the for loop below as an example:
