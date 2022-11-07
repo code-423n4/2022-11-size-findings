@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "M4TZ1P",
+  "risk": "3",
+  "title": "Malicious user can DOS auction with no risk",
+  "issueId": 115,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/115"
+}
