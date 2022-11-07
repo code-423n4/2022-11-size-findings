@@ -83,3 +83,14 @@ Conditional checks should appear as early as possible in a function logic. In th
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L155-L159
 
 Or, better yet, right after `Auction a` has been cached
+
+## Inaccurate Graphical Representation
+`cliffPercent` is meant to be divided by 1e18 to furnish a normalized value between 0 and 1. As such, it should be replaced with `cliffAmount` on line 31 of `CommonTokenMath.sol` to better portray the base tokens unlocked at vesting start.
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L31
+
+Additionally, the function logic did not implement any step wise release of vested token periodically. Hence, the graphical staircase should be replaced with a straight line to better portray the implication of a continuous function represented in lines 64 to 66.
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L64-L66
+
+ 
