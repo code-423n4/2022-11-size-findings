@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "0xSmartContract",
+  "risk": "2",
+  "title": "Incompatibility with ERC20 Tokens with Reflection token feature",
+  "issueId": 137,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/137"
+}
