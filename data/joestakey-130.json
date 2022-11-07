@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "joestakey",
+  "risk": "2",
+  "title": "no `baseAmount` validation in `bid()` makes gas grieving attacks on `seller` possible, by doing 'ghost' bids",
+  "issueId": 130,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/130"
+}
