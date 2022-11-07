@@ -9,4 +9,4 @@ https://github.com/code-423n4/2022-11-size/blob/79aa9c01987e57a760521acecfe81b28
 
 Moreover, the previous bidders will be able to cancel their bid and receive their funds. Note that the condition `if (a.data.lowestQuote != type(uint128).max || block.timestamp <= a.timings.endTimestamp + 24 hours)` is false, because `a.data.lowestQuote = type(uint128).max` for an unfinalized auction.
 
-#### No. 2:
+
