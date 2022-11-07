@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "CommonTokenMath.tokensAvailableAtTime handles vesting time incorrectly",
+  "issueId": 114,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/114"
+}
