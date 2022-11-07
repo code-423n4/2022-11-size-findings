@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "yixxas",
+  "risk": "3",
+  "title": "Auction can be manipulated by a scheming bidder due to the ability to `cancelBid()` during reveal phase",
+  "issueId": 90,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/90"
+}
