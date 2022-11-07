@@ -1,6 +1,6 @@
 # 1. Define magic numbers as constant values in order to improve the code's legibility
 
-a) `MAX_BIDS`
+i) `MAX_BIDS`
 
 ```diff
 diff --git a/src/SizeSealed.sol b/src/SizeSealed.sol
@@ -28,7 +28,7 @@ index e5380ff..c43001b 100644
          }
 ```
 
-b) `REVEAL_PERIOD`
+ii) `REVEAL_PERIOD`
 
 ```diff
 diff --git a/src/SizeSealed.sol b/src/SizeSealed.sol
@@ -65,5 +65,45 @@ index e5380ff..961123c 100644
                  revert InvalidState();
              }
          }
+
+```
+
+iii) `CLIFF_PERCENT_BASE`
+
+```
+diff --git a/src/SizeSealed.sol b/src/SizeSealed.sol
+index e5380ff..a0b8d64 100644
+--- a/src/SizeSealed.sol
++++ b/src/SizeSealed.sol
+@@ -69,7 +69,7 @@ contract SizeSealed is ISizeSealed {
+         if (timings.vestingStartTimestamp > timings.vestingEndTimestamp) {
+             revert InvalidTimestamp();
+         }
+-        if (timings.cliffPercent > 1e18) {
++        if (timings.cliffPercent > CommonTokenMath.CLIFF_PERCENT_BASE) {
+             revert InvalidCliffPercent();
+         }
+         // Revert if the min bid is more than the total reserve of the auction
+diff --git a/src/util/CommonTokenMath.sol b/src/util/CommonTokenMath.sol
+index 2ea350f..b8545b0 100644
+--- a/src/util/CommonTokenMath.sol
++++ b/src/util/CommonTokenMath.sol
+@@ -4,6 +4,7 @@ pragma solidity 0.8.17;
+ import {FixedPointMathLib} from "solmate/utils/FixedPointMathLib.sol";
+ 
+ library CommonTokenMath {
++    uint256 public constant CLIFF_PERCENT_BASE = 1e18;
+ 
+     /*//////////////////////////////////////////////////////////////
+                                 VESTING
+@@ -57,7 +58,7 @@ library CommonTokenMath {
+             return 0; // If cliff hasn't been triggered yet, bidder receives no tokens
+         } else {
+             // Vesting is active and cliff has triggered
+-            uint256 cliffAmount = FixedPointMathLib.mulDivDown(baseAmount, cliffPercent, 1e18);
++            uint256 cliffAmount = FixedPointMathLib.mulDivDown(baseAmount, cliffPercent, CLIFF_PERCENT_BASE);
+ 
+             return uint128(
+                 cliffAmount
 
 ```
