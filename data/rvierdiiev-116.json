@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "SizeSealed do not support fee on transfer and rebasing tokens",
+  "issueId": 116,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/116"
+}
