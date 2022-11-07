@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "yixxas",
+  "risk": "2",
+  "title": "Malicious user can always buy out the auction at the `minimumBidQuote` by blocking out other bidders",
+  "issueId": 102,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/102"
+}
