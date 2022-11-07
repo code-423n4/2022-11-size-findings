@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Picodes",
+  "risk": "2",
+  "title": "Bidder can spam an auction to grief seller or to prevent other bidders from joining the auction",
+  "issueId": 123,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/123"
+}
