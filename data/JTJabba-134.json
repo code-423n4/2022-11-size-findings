@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "JTJabba",
+  "risk": "3",
+  "title": "An auction can be finalized then cancelled allowing an attacker to steal funds",
+  "issueId": 134,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/134"
+}
