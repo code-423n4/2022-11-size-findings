@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "KingNFT",
+  "risk": "3",
+  "title": "Seller can draw all funds from auction when price >= 1.0",
+  "issueId": 86,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/86"
+}
