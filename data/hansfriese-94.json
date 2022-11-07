@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "hansfriese",
+  "risk": "3",
+  "title": "Bidders might fail to withdraw their unused funds after the auction was finalized because the contract doesn't have enough balance.",
+  "issueId": 94,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/94"
+}
