@@ -89,7 +89,7 @@ Or, better yet, right after `Auction a` has been cached
 
 https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L31
 
-Additionally, the function logic did not implement any step wise release of vested token periodically. Hence, the graphical staircase should be replaced with a straight line to better portray the implication of a continuous function represented in lines 64 to 66.
+Additionally, the function logic did not implement any step wise release of vested token periodically. Hence, the graphical staircase should be replaced with a linear straight line to better portray the implication of a continuous function represented in lines 64 to 66.
 
 https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L64-L66
 
