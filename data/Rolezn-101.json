@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Rolezn",
+  "risk": "2",
+  "title": "Malicious ERC20 tokens can cause auctions to be locked",
+  "issueId": 101,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/101"
+}
