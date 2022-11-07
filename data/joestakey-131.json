@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "joestakey",
+  "risk": "2",
+  "title": "It should not be possible to create an auction with a `Point(1,1)` `publicKey`",
+  "issueId": 131,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/131"
+}
