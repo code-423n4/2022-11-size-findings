@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "neumo",
+  "risk": "3",
+  "title": "A malicious user could create a bid that would prevent an auction from being finalized ",
+  "issueId": 209,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/209"
+}
