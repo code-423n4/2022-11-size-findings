@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "hanxin",
+  "risk": "2",
+  "title": "A total of 3 risks: one with imperfect concurrency judgment logic, one with unrobust business logic, and one with unreasonable timestamp settings",
+  "issueId": 272,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/272"
+}
