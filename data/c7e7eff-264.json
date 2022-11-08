@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "c7e7eff",
+  "risk": "3",
+  "title": "Rebasing tokens as Base tokens for the auction could be stuck in the contract or mean loss of funds for the las person to withdraw",
+  "issueId": 264,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/264"
+}
