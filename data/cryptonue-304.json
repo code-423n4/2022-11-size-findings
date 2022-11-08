@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "cryptonue",
+  "risk": "3",
+  "title": "Draining baseToken from contract by calling finalize function multiple times ",
+  "issueId": 304,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/304"
+}
