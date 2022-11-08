@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "cryptonue",
+  "risk": "3",
+  "title": "Seller can stole users assets by create and then cancel the auction",
+  "issueId": 276,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/276"
+}
