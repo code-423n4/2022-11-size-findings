@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "PwnedNoMore",
+  "risk": "3",
+  "title": "[PNM-002] `finalize` with malicious input may lock bidder funds in the contract",
+  "issueId": 213,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/213"
+}
