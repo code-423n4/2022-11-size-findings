@@ -92,3 +92,6 @@ File : 2022-11-size/src/interfaces/ISizeSealed.sol
 
 96  :           uint256 balanceBeforeTransfer = ERC20(auctionParams.baseToken).balanceOf(address(this));
 102:           uint256 balanceAfterTransfer = ERC20(auctionParams.baseToken).balanceOf(address(this));
+98  :           SafeTransferLib.safeTransferFrom(
+                  ERC20(auctionParams.baseToken), msg.sender, address(this), auctionParams.totalBaseAmount
+                   );
