@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "RedOneN",
+  "risk": "2",
+  "title": "Providing the same address for the \"base\" and the \"quote\" tokens creates a risk of fund loss for the seller.",
+  "issueId": 266,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/266"
+}
