@@ -32,6 +32,7 @@ File: ISizeSealed.sol
 121: 
 122:     event Withdrawal(uint256 auctionId, uint256 bidIndex, uint256 withdrawAmount, uint256 remainingAmount);
 ```
+
 # [NC] Design of bidder flow is not efficient
 
 Currently when a user bid X amount, they bid with sending their token also X amount. At some point, he want to bid a higher amount Y, (which Y > X), so he need to send Y amount. To make it efficient and use smaller index, if a user want to increase their bid, they can just update the previous bid value. In this case if user want to bid Y, they only need to send Y-X amount.
@@ -43,4 +44,31 @@ File: SizeSealed.sol
 157:         if (bidIndex >= 1000) {
 158:             revert InvalidState();
 159:         }
+```
+
+# [L] AVOID NESTED IF BLOCKS
+
+For better readability and analysis it is better to avoid nested if blocks. Here is an example:
+```solidity
+File: SizeSealed.sol
+132:         if (a.params.merkleRoot != bytes32(0)) {
+133:             bytes32 leaf = keccak256(abi.encodePacked(msg.sender));
+134:             if (!MerkleProofLib.verify(proof, a.params.merkleRoot, leaf)) {
+135:                 revert InvalidProof();
+136:             }
+137:         }
+```
+
+can be rewrite as:
+```solidity
+        if (
+            a.params.merkleRoot != bytes32(0) &&
+            !MerkleProofLib.verify(
+                proof,
+                a.params.merkleRoot,
+                keccak256(abi.encodePacked(msg.sender))
+            )
+        ) {
+            revert InvalidProof();
+        }
 ```
