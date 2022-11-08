@@ -23,6 +23,8 @@ File : 2022-11-size/src/SizeSealed.sol
 
 File : 2022-11-size/src/SizeSealed.sol
 
+There are 2 instances of this issue:
+
 302:          for (uint256 i; i < bidIndices.length; i++) {
 
 244:          for (uint256 i; i < seenBidMap.length - 1; i++) {
@@ -50,4 +52,36 @@ File : 2022-11-size/src/SizeSealed.sol
 
 ---------------------------------------------------------------------------------------------------------------------
 
-5)   
+5)   NEED TO DECLARE ALL EVENT PARAMETERS AS "indexed " .  SO CAN REDUCE LARGE VOLUME OF THE GAS FEE
+
+
+File : 2022-11-size/src/interfaces/ISizeSealed.sol
+
+There are 8 instances of this issue:
+
+97 :             event AuctionCreated(
+                   uint256 auctionId, address seller, AuctionParameters params, Timings timings, bytes encryptedPrivKey
+                    );
+
+101 :          event AuctionCancelled(uint256 auctionId);
+
+103 :          event Bid(
+        address sender,
+        uint256 auctionId,
+        uint256 bidIndex,
+        uint128 quoteAmount,
+        bytes32 commitment,
+        ECCMath.Point pubKey,
+        bytes32 encryptedMessage,
+        bytes encryptedPrivateKey
+    );
+
+114:           event BidCancelled(uint256 auctionId, uint256 bidIndex);
+
+116:           event RevealedKey(uint256 auctionId, uint256 privateKey);
+
+118:           event AuctionFinalized(uint256 auctionId, uint256[] bidIndices, uint256 filledBase, uint256 filledQuote);
+
+120:           event BidRefund(uint256 auctionId, uint256 bidIndex);
+
+122:           event Withdrawal(uint256 auctionId, uint256 bidIndex, uint256 withdrawAmount, uint256 remainingAmount);
