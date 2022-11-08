@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "horsefacts",
+  "risk": "2",
+  "title": "Missing check for `quoteToken` existence",
+  "issueId": 146,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/146"
+}
