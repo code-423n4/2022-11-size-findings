@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "gz627",
+  "risk": "2",
+  "title": "Bids can still be placed on a cancelled auction and this can be exploited to manipulate target auction's price",
+  "issueId": 327,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/327"
+}
