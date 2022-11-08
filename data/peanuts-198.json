@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "peanuts",
+  "risk": "2",
+  "title": "Auctioneer can grief auction by not closing the auction",
+  "issueId": 198,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/198"
+}
