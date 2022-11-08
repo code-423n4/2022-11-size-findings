@@ -27,7 +27,7 @@ event AuctionCreated(
     );
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/interfaces/ISizeSealed.sol#L97
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L97
 
 ```
 event Bid(
@@ -42,37 +42,37 @@ event Bid(
     );
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/interfaces/ISizeSealed.sol#L103
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L103
 
 ```
 event BidCancelled(uint256 auctionId, uint256 bidIndex);
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/interfaces/ISizeSealed.sol#L114
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L114
 
 ```
 event RevealedKey(uint256 auctionId, uint256 privateKey);
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/interfaces/ISizeSealed.sol#L116
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L116
 
 ```
 event AuctionFinalized(uint256 auctionId, uint256[] bidIndices, uint256 filledBase, uint256 filledQuote);
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/interfaces/ISizeSealed.sol#L118
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L118
 
 ```
 event BidRefund(uint256 auctionId, uint256 bidIndex);
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/interfaces/ISizeSealed.sol#L120
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L120
 
 ```
 event Withdrawal(uint256 auctionId, uint256 bidIndex, uint256 withdrawAmount, uint256 remainingAmount);
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/interfaces/ISizeSealed.sol#L122
+https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L122
 
 
 
