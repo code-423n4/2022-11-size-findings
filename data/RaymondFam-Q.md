@@ -93,4 +93,20 @@ Additionally, the function logic did not implement any step wise release of vest
 
 https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L64-L66
 
- 
+## Inadequate Sanity Checks
+The following code block could take in more structured checks by implementing some threshold limits:  
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L60-L74
+
+`(timings.endTimestamp <= block.timestamp)` would easily be bypassed if `timings.endTimestamp == block.timestamp + 1`. Consider adding a reasonable amount of threshold to `block.timestamp`.
+
+In a reverse manner, `(timings.startTimestamp >= timings.endTimestamp)` could easily be skipped if `timings.endTimestamp == timings.startTimestamp + 1` Consider also adding a reasonable amount of threshold to `timings.startTimestamp`. 
+
+Like wise, `(timings.endTimestamp > timings.vestingStartTimestamp)` and `(timings.vestingStartTimestamp > timings.vestingEndTimestamp)` could return false by correspondingly having `(timings.endTimestamp == timings.vestingStartTimestamp)` and `(timings.vestingStartTimestamp == timings.vestingEndTimestamp)`. A threshold should also be added to `timings.endTimestamp` and `timings.vestingStartTimestamp` respectively.
+
+As for line 72, consider refactoring it to:
+
+```
+        if (timings.cliffPercent > 1e18 || timings.cliffPercent == 0) {
+```
+
