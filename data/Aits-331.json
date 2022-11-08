@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Aits",
+  "risk": "2",
+  "title": "Low level call returns true if the address doesn’t exist",
+  "issueId": 331,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/331"
+}
