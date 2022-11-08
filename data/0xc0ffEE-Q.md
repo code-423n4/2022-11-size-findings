@@ -1,0 +1,2 @@
+1. function `bid` should check for whether the auction is valid or not by checking `a.data.seller != address(0)`. Because the auction could be cancelled by the seller and then the auction accepts bid forever but nobody could finalize it. This could cause the bidder to waste gas fee when unintentionally bid for cancelled auction (the bidder has to cancel bid to retrieve fund)
+2. function `cancelBid` should remove bid at `bidIndex` from `a.bids` so that the number of 1000 bids in function `bid` does not involve cancelled bid -> the number of effective bids is increased
