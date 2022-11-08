@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "sashik_eth",
+  "risk": "2",
+  "title": "Reentrancy in createAuction() function",
+  "issueId": 338,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/338"
+}
