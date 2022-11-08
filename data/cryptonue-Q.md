@@ -49,6 +49,7 @@ File: SizeSealed.sol
 # [L] AVOID NESTED IF BLOCKS
 
 For better readability and analysis it is better to avoid nested if blocks. Here is an example:
+
 ```solidity
 File: SizeSealed.sol
 132:         if (a.params.merkleRoot != bytes32(0)) {
