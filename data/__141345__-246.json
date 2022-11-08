@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "__141345__",
+  "risk": "3",
+  "title": "Seller can steal all the bid fund by repeatedly calling `finalize()`  ",
+  "issueId": 246,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/246"
+}
