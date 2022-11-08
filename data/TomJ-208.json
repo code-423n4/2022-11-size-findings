@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "TomJ",
+  "risk": "2",
+  "title": "Attacker can easily DOS any auction with `bid` function",
+  "issueId": 208,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/208"
+}
