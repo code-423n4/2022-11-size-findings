@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "rvierdiiev",
+  "risk": "2",
+  "title": "Attacker can bid 1000 times to not allow anyone else beat his price",
+  "issueId": 180,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/180"
+}
