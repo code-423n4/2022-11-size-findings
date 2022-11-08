@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "cryptphi",
+  "risk": "3",
+  "title": "Some bidders can withdraw would claim moreof the baseToken when auction CliffPercent value is 1",
+  "issueId": 339,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/339"
+}
