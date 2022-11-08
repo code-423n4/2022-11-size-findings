@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "cryptostellar5",
+  "risk": "3",
+  "title": "`baseToken` AND `quoteToken` CAN BE THE SAME ERC20 TOKENS, RESULTING IN TRICKING BIDDERS TO LOSE THEIR TOKENS",
+  "issueId": 189,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/189"
+}
