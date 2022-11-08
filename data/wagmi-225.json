@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "wagmi",
+  "risk": "2",
+  "title": " Attacker can always spam `bid()` and DOS bidding if merkle proof is not used",
+  "issueId": 225,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/225"
+}
