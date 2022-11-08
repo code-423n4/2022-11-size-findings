@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "pashov",
+  "risk": "2",
+  "title": "Protocol won’t work with rebasing tokens",
+  "issueId": 300,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/300"
+}
