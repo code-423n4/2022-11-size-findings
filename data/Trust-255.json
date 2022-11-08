@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Trust",
+  "risk": "3",
+  "title": "Any use of fee-on-transfer tokens as quote tokens in auctions will result in freeze or loss of funds for users.",
+  "issueId": 255,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/255"
+}
