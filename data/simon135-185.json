@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "simon135",
+  "risk": "3",
+  "title": "seller can change `lowestBase`and `lowestQuote` and  the seller can make it diffrent values  causing a dos or loss of funds ",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/185"
+}
