@@ -1,0 +1,1 @@
+1. Ran out of time, so can't really send much information on this.  There is likelihood of re-entrancy attack when baseToken or quoteToken are ERC777 tokens.
