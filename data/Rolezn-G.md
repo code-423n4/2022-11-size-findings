@@ -4,12 +4,13 @@
 | |Issue|Contexts|Estimated Gas Saved|
 |-|:-|:-|:-:|
 | [GAS&#x2011;1](#GAS&#x2011;1) | `++i`/`i++` Should Be `unchecked{++i}`/`unchecked{i++}` When It Is Not Possible For Them To Overflow, As Is The Case When Used In For- And While-loops | 2 | -
-| [GAS&#x2011;2](#GAS&#x2011;2) | `abi.encode()` is less efficient than `abi.encodepacked()` | 3 | 1500
-| [GAS&#x2011;3](#GAS&#x2011;3) | Use calldata instead of memory for function parameters | 1 | 300
+| [GAS&#x2011;2](#GAS&#x2011;2) | `abi.encode()` is less efficient than `abi.encodepacked()` | 3 | -
+| [GAS&#x2011;3](#GAS&#x2011;3) | Use `calldata` instead of `memory` for function parameters | 1 | 300
 | [GAS&#x2011;4](#GAS&#x2011;4) | Public Functions To External | 1 | -
 | [GAS&#x2011;5](#GAS&#x2011;5) | Optimize names to save gas | 1 | 22
+| [GAS&#x2011;6](#GAS&#x2011;6) | Use local variable instead of storage variable for event `emit` | 3 | 300
 
-Total: 8 contexts over 5 issues
+Total: 11 contexts over 6 issues
 
 ## Gas Optimizations
 
@@ -174,6 +175,33 @@ File: \2022-11-size\src\SizeSealed.sol
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol
 
 
+
+### <a href="#Summary">[GAS&#x2011;6]</a><a name="GAS&#x2011;6"> Use local variable instead of storage variable for event `emit` 
+
+
+#### <ins>Proof Of Concept</ins>
+
+```
+[-] emit AuctionCreated(auctionId, msg.sender, auctionParams, timings, encryptedSellerPrivKey);
+[+] emit AuctionCreated(auctionId, msg.sender, a.params, a.timings, encryptedSellerPrivKey);
+```
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L107
+
+
+```
+[-] msg.sender, auctionId, bidIndex, quoteAmount, commitment, pubKey, encryptedMessage, encryptedPrivateKey
+[+] msg.sender, auctionId, bidIndex, ebid.quoteAmount, ebid.commitment, ebid.pubKey, ebid.encryptedMessage, encryptedPrivateKey
+```
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L166
+
+```
+[-] emit RevealedKey(auctionId, privateKey);
+[+] emit RevealedKey(auctionId, a.data.privKey);
+```
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L193
 
 
 
