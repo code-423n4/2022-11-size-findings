@@ -87,6 +87,10 @@ Additionally, the function logic did not implement any step wise release of vest
 
 https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L64-L66
 
+Likewise, `totalBaseAmount` on line 18 shadowing the maximum amount of `baseToken` to be auctioned in `struct AuctionParameters` should be replaced with `baseAmount` to be more inline with the input parameter of `tokensAvailableAtTime`.
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/util/CommonTokenMath.sol#L18
+
 ## Inadequate Sanity Checks
 The following code block could take in more structured checks by implementing some threshold limits:  
 
@@ -103,4 +107,9 @@ As for line 72, consider refactoring it to:
 ```
         if (timings.cliffPercent > 1e18 || timings.cliffPercent == 0) {
 ```
+## Minimization of Edge Cases
+When ensuring the minimum bid is not more than the total reserve of the auction as commented in [line 75](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L75), the conditional check would allow seller to set `auctionParams.minimumBidQuote` to a value as much as `auctionParams.reserveQuotePerBase * auctionParams.totalBaseAmount`. This could very much limit the number of bidders having the needed resources to trade. 
 
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L76-L82
+
+Consider adding an appropriate divider to `auctionParams.reserveQuotePerBase`.
