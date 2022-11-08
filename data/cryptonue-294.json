@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "cryptonue",
+  "risk": "3",
+  "title": "baseToken amount is not contained per Auction can messed up vesting accounting",
+  "issueId": 294,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/294"
+}
