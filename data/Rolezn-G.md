@@ -1,13 +1,13 @@
 ## Summary<a name="Summary">
 
 ### Gas Optimizations
-| |Issue|Contexts|
-|-|:-|:-:|
-| [GAS&#x2011;1](#GAS&#x2011;1) | `++i`/`i++` Should Be `unchecked{++i}`/`unchecked{i++}` When It Is Not Possible For Them To Overflow, As Is The Case When Used In For- And While-loops | 2 |
-| [GAS&#x2011;2](#GAS&#x2011;2) | `abi.encode()` is less efficient than `abi.encodepacked()` | 3 |
-| [GAS&#x2011;3](#GAS&#x2011;3) | Use calldata instead of memory for function parameters | 1 |
-| [GAS&#x2011;4](#GAS&#x2011;4) | Public Functions To External | 1 |
-| [GAS&#x2011;5](#GAS&#x2011;5) | Optimize names to save gas | 1 |
+| |Issue|Contexts|Estimated Gas Saved|
+|-|:-|:-|:-:|
+| [GAS&#x2011;1](#GAS&#x2011;1) | `++i`/`i++` Should Be `unchecked{++i}`/`unchecked{i++}` When It Is Not Possible For Them To Overflow, As Is The Case When Used In For- And While-loops | 2 | -
+| [GAS&#x2011;2](#GAS&#x2011;2) | `abi.encode()` is less efficient than `abi.encodepacked()` | 3 | 1500
+| [GAS&#x2011;3](#GAS&#x2011;3) | Use calldata instead of memory for function parameters | 1 | 300
+| [GAS&#x2011;4](#GAS&#x2011;4) | Public Functions To External | 1 | -
+| [GAS&#x2011;5](#GAS&#x2011;5) | Optimize names to save gas | 1 | 22
 
 Total: 8 contexts over 5 issues
 
@@ -25,13 +25,13 @@ The unchecked keyword is new in solidity version 0.8.0, so this only applies to 
 244: for (uint256 i; i < bidIndices.length; i++) {
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/SizeSealed.sol#L244
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L244
 
 ```
 302: for (uint256 i; i < seenBidMap.length - 1; i++) {
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/SizeSealed.sol#L302
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L302
 
 
 
@@ -48,19 +48,19 @@ See for more information: https://github.com/ConnorBlockchain/Solidity-Encode-Ga
 467: return keccak256(abi.encode(message));
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/SizeSealed.sol#L467
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L467
 
 ```
 26: bytes memory data = abi.encode(point, scalar);
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/util/ECCMath.sol#L26
+https://github.com/code-423n4/2022-11-size/blob/main/src/util/ECCMath.sol#L26
 
 ```
 61: return keccak256(abi.encode(point));
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/util/ECCMath.sol#L61
+https://github.com/code-423n4/2022-11-size/blob/main/src/util/ECCMath.sol#L61
 
 
 
@@ -137,7 +137,7 @@ function finalize(uint256 auctionId, uint256[] memory bidIndices, uint128 cleari
     {
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/SizeSealed.sol#L217
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L217
 
 
 
@@ -156,7 +156,7 @@ External call cost is less expensive than of public functions.
 function computeCommitment(bytes32 message) public pure returns (bytes32) {
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/SizeSealed.sol#L466
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L466
 
 
 
@@ -171,7 +171,7 @@ https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/SizeSealed.
 File: \2022-11-size\src\SizeSealed.sol
 ```
 
-https://github.com/debtdao/Line-of-Credit/2022-11-size/tree/main/src/SizeSealed.sol
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol
 
 
 
