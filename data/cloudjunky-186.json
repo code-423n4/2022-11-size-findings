@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "cloudjunky",
+  "risk": "3",
+  "title": "Quotetoken can be address(0) or any EOA and still allow auctions and bids to be created",
+  "issueId": 186,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/186"
+}
