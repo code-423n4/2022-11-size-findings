@@ -90,7 +90,7 @@ Before deploying your contract, activate the optimizer when compiling using “s
 ```
 module.exports = {
   solidity: {
-    version: "0.8.9",
+    version: "0.8.17",
     settings: {
       optimizer: {
         enabled: true,
@@ -171,3 +171,7 @@ https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L294
 ```
             data.filledBase = data.filledBase + baseAmount;
 ```
+## Calling Internal functions Is Cheaper
+From inside a smart contract, calling its internal functions is cheaper than calling its public functions, because when you call a public function, all the parameters are again copied into memory and passed to that function. By contrast, when you call an internal function, references of those parameters are passed and they are not copied into memory again. This saves a bit of gas, especially when the parameters are big.
+
+As such, `finalize()` should have its visibility changed to `internal` since calling it internally is the only viable way to have `a.data.privKey` updated.
