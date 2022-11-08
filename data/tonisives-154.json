@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "tonisives",
+  "risk": "2",
+  "title": "ecMul is used with 6000 gas which will fail if gas prices increase",
+  "issueId": 154,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/154"
+}
