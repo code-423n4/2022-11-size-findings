@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "Matin",
+  "risk": "2",
+  "title": "Solmate's safeTransfer function does not check the existence of the contract",
+  "issueId": 268,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/268"
+}
