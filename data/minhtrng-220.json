@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "minhtrng",
+  "risk": "2",
+  "title": "Quote token not checked for fees-on-transfer, can cause tokens to be stuck",
+  "issueId": 220,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/220"
+}
