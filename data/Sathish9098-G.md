@@ -85,3 +85,10 @@ There are 8 instances of this issue:
 120:           event BidRefund(uint256 auctionId, uint256 bidIndex);
 
 122:           event Withdrawal(uint256 auctionId, uint256 bidIndex, uint256 withdrawAmount, uint256 remainingAmount);
+-------------------------------------------------------------------------------------------------------------------------------------------------
+6)   ERC20(auctionParams.baseToken)  SHOULD BE CATCHED WITH LOCAL address VARIABLE 
+
+File : 2022-11-size/src/interfaces/ISizeSealed.sol
+
+96  :           uint256 balanceBeforeTransfer = ERC20(auctionParams.baseToken).balanceOf(address(this));
+102:           uint256 balanceAfterTransfer = ERC20(auctionParams.baseToken).balanceOf(address(this));
