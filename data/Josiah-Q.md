@@ -82,6 +82,8 @@ Certain parameters of the contracts can be configured to edge/extreme values, ca
 
 For instance, the check would pass if `timings.endTimestamp` is set to only one second greater than `block.timestamp` in line 60. This could have been prevented if a proper threshold value had been to `timings.endTimestamp`.
 
+Additionally, a seller could set `auctionParams.minimumBidQuote` to as close as `auctionParams.reserveQuotePerBase * auctionParams.totalBaseAmount`, making it impractical for many bidders to afford a bid. This could have been prevented if a proper divider had been added to the R.H.S of equation.
+
 ## CONDITIONAL CHECKS
 Checks should be done as early as possible in a code block to prevent unnecessary code executions prior to it that would not only be reverted but also incur a wastage of gas. Here is one instance found that should at least be inserted before line 148.
 
