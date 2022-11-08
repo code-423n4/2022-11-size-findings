@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "bin2chen",
+  "risk": "2",
+  "title": "createAuction() does not prevent use the old pubKey, which may lead to transparent bidding",
+  "issueId": 142,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/142"
+}
