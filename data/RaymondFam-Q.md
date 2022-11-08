@@ -19,12 +19,6 @@ https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L60
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L425-L426
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L460
 
-## Function Calls in Loop Could Lead to Denial of Service
-Function calls made in unbounded loop are error-prone with potential resource exhaustion as it can trap the contract due to the gas limitations or failed transactions. Here are some of the instances entailed:
-
-https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L244
-https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L302
-
 ## Last Array Element Omitted
 The following instance of for loop is going to have the last element of the array omitted.
 
@@ -38,7 +32,7 @@ Consider refactoring the code line as follows:
 The following refactoring of code is another alternative albeit less gas efficient though because of the adoption of `<=` instead of `<`:
 
 ```
-        for (uint256 i; i <= seenBidMap.length; i++) {
+        for (uint256 i; i <= seenBidMap.length - 1; i++) {
 ```
 ## Variable Names
 Consider making the naming of local variables more verbose and descriptive so all other peer developers would better be able to comprehend the intended statement logic, significantly enhancing the code readability. Here are some of the instances entailed:
