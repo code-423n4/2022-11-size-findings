@@ -1,19 +1,3 @@
-## unnecessary balance before/after check
-    
-```solidity
-SafeTransferLib.safeTransferFrom(
-    ERC20(auctionParams.baseToken), msg.sender, address(this), auctionParams.totalBaseAmount
-);
-
-uint256 balanceAfterTransfer = ERC20(auctionParams.baseToken).balanceOf(address(this));
-
-if (balanceAfterTransfer - balanceBeforeTransfer != auctionParams.totalBaseAmount) {
-```
-
-[https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol/#L94](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol/#L94)
-
-SafeTransferLib.safeTransferFrom will revert if the tokens are not transferred. This means the `if (balanceAfterTransfer - balanceBeforeTransfer != auctionParams.totalBaseAmount)` check is not necessary.
-
 ## Unnecessary looping in `finalize` if base abount has been filled
 
 ```solidity
