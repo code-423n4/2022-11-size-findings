@@ -35,3 +35,12 @@ File: ISizeSealed.sol
 # [NC] Design of bidder flow is not efficient
 
 Currently when a user bid X amount, they bid with sending their token also X amount. At some point, he want to bid a higher amount Y, (which Y > X), so he need to send Y amount. To make it efficient and use smaller index, if a user want to increase their bid, they can just update the previous bid value. In this case if user want to bid Y, they only need to send Y-X amount.
+
+# [NC] CONSTANTS SHOULD BE DEFINED RATHER THAN USING MAGIC NUMBERS
+
+```
+File: SizeSealed.sol
+157:         if (bidIndex >= 1000) {
+158:             revert InvalidState();
+159:         }
+```
