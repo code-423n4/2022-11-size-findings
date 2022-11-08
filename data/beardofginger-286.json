@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "beardofginger",
+  "risk": "2",
+  "title": "Casting to uint128 when valiue can exceed uint128.max",
+  "issueId": 286,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/286"
+}
