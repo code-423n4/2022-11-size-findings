@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "wagmi",
+  "risk": "2",
+  "title": "Quote refund can fail for some tokens, causing withdraw to fail ",
+  "issueId": 224,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/224"
+}
