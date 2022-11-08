@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "__141345__",
+  "risk": "3",
+  "title": "Bidder can abuse the `bidIndices[]` in `finalize()`",
+  "issueId": 241,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/241"
+}
