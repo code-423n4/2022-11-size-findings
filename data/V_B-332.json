@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "V_B",
+  "risk": "3",
+  "title": "Denial of service when `baseAmount` is equal to zero",
+  "issueId": 332,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/332"
+}
