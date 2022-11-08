@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "brgltd",
+  "risk": "2",
+  "title": "`SizeSealed.withdraw` will revert on `mulDivDown` if `a.data.lowest` is the value zero, which preventing withdraws for an auction",
+  "issueId": 315,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/315"
+}
