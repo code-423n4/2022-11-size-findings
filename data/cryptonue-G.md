@@ -10,3 +10,29 @@ File: SizeSealed.sol
 218:         public
 219:         atState(idToAuction[auctionId], States.RevealPeriod)
 ```
+
+# INCREMENTS/DECREMENTS CAN BE UNCHECKED IN FOR-LOOPS
+
+In Solidity 0.8+, there’s a default overflow check on unsigned integers. It’s possible to uncheck this in for-loops and save some gas at each iteration, but at the cost of some code readability, as this uncheck cannot be made inline.
+
+Consider wrapping with an unchecked block here (around 25 gas saved per instance):
+
+sample:
+```solidity
+File: SizeSealed.sol
+302:         for (uint256 i; i < seenBidMap.length - 1; i++) {
+303:             if (seenBidMap[i] != type(uint256).max) {
+304:                 revert InvalidState();
+305:             }
+306:         }
+```
+
+can be change to:
+```solidity
+        for (uint256 i; i < seenBidMap.length - 1; ) {
+            if (seenBidMap[i] != type(uint256).max) {
+                revert InvalidState();
+            }
+            unchecked { ++i; }
+        }
+```
