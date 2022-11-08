@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "__141345__",
+  "risk": "3",
+  "title": "Bidder can steal all the base token by repeatedly calling `finalize()`  ",
+  "issueId": 242,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/242"
+}
