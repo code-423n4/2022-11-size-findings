@@ -9,6 +9,7 @@
 | [GAS&#x2011;4](#GAS&#x2011;4) | Public Functions To External | 1 | -
 | [GAS&#x2011;5](#GAS&#x2011;5) | Optimize names to save gas | 1 | 22
 | [GAS&#x2011;6](#GAS&#x2011;6) | Use local variable instead of storage variable for event `emit` | 3 | 300
+| [GAS&#x2011;7](#GAS&#x2011;7) | Cache/precompute repeated calculations | 2 | 200
 
 Total: 11 contexts over 6 issues
 
@@ -204,5 +205,22 @@ https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L166
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L193
 
 
+### <a href="#Summary">[GAS&#x2011;7]</a><a name="GAS&#x2011;7"> Cache/precompute repeated calculations
 
 
+#### <ins>Proof Of Concept</ins>
+
+```
+290: baseAmount = data.totalBaseAmount - data.filledBase;
+319: uint128 unsoldBase = data.totalBaseAmount - data.filledBase;
+```
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L290
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L319
+
+```
+302: seenBidMap.length - 1
+309: seenBidMap.length - 1
+```
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L302
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L309
