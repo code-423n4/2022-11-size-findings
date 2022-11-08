@@ -32,3 +32,41 @@ It is recommended using `delete` whenever there is a need to set state variable 
 [Line 404](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L404)
 [Lines 432 - 435](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L432-L435)
 
+## DOS PREVENTION COULD BE EXPLOITED
+It is intuitive to limit the bids of an auction to 1000 to prevent DOS as commented on [Line 156](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L156). However, without adequate measures, the following conditional check could be exploited by a malicious bidder.
+
+[Line 157 - 159](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L157-L159)
+
+```
+        if (bidIndex >= 1000) {
+            revert InvalidState();
+        }
+```
+This is because a bidder can keep invoking `bid()` and `cancelBid()` until `bid()` begins to revert.
+
+As such, it is recommended that all cancelled bids be removed from the array and retain only the valid ones. One easy way is to have the cancelled bid assigned with the last bid prior to having the last element removed using `array.pop()`. 
+
+## INCOMPLETE FOR LOOP
+The for loop below does not have the last element catered for.
+
+[Line 302 - 306](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L302-L306)
+
+It can be fixed by just having line 302 refactored to:
+
+```
+        for (uint256 i; i < seenBidMap.length; i++) {
+```
+## MISSING NATSPEC
+As documented in the link below:
+
+https://docs.soliditylang.org/en/v0.8.16/natspec-format.html
+
+It is recommended using a special form of comments, i.e., the Ethereum Natural Language Specification Format (NatSpec) to provide rich documentation for functions, return variables and more.
+
+Here are some of the instance found.
+
+[Lines 40 - 48](https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L40-L48)
+[Lines 97 - 122](https://github.com/code-423n4/2022-11-size/blob/main/src/interfaces/ISizeSealed.sol#L97-L122)
+[Lines 28 - 43](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L28-L43)
+[Lines 466 - 480](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L466-L480)
+
