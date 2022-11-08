@@ -1,6 +1,8 @@
+1) 
+
 ECCMath.sol  #L27 
 
- In IF statement we don't want to check both conditions. here using "||" operator so if first CONDITION true then we can skip second condition. Second condition only checked when the first condition is false. In this way can save gas fee 
+ In IF statement we don't want to check both conditions. Here using "||" operator so if first CONDITION true then we can skip all other conditions. Second condition only checked when the first condition is false. In this way can save gas fee 
 
 
 /// @notice calculates point^scalar
@@ -14,9 +16,93 @@ ECCMath.sol  #L27
         return abi.decode(ret, (Point));
     }
 
+SizeSealed.sol #L144 #l187 #L426
+
+
+ if (quoteAmount == 0 || quoteAmount == type(uint128).max || quoteAmount < a.params.minimumBidQuote) {
+            revert InvalidBidAmount();
+        }
+
+
+ECCMath.Point memory pubKey = ECCMath.publicKey(privateKey);
+        if (pubKey.x != a.params.pubKey.x || pubKey.y != a.params.pubKey.y || (pubKey.x == 1 && pubKey.y == 1)) {
+            revert InvalidPrivateKey();
+        }
+
+
+ // Only allow bid cancellations while not finalized or in the reveal period
+        if (block.timestamp >= a.timings.endTimestamp) {
+            if (a.data.lowestQuote != type(uint128).max || block.timestamp <= a.timings.endTimestamp + 24 hours) {
+                revert InvalidState();
+            }
+        }
+
+
+
+PROOF OF CONCEPT :
+
 https://github.com/code-423n4/2022-11-size/blob/main/src/util/ECCMath.sol#L27
 
-SOLUTIONS : 
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L144
 
-NEED TO RESTRUCTURE THE IF STATEMENT. THE SECOND CONDITION ONLY CHECKED ONLY WHEN FIRST CONDITION IS false 
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L187
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L426
+
+|| OPERATOR LOGIC :
+
+true + true = true
+true + false= true
+false + true =true
+false + false=false 
+
+SAME PROBLEM REPEATED 4 TIMES . IF WE SOLVE THIS CAN SAVE MORE VOLUME OF GAS
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+2)
+
+SizeSealed.sol #L302  #L244
+
+In For loop we can use ++i Instead of i++ . ++i Consume less gas fee compared to i++ . There is difference in ++i and i++. 
+
+
+// Fill orders from highest price to lowest price
+        for (uint256 i; i < bidIndices.length; i++) {
+            uint256 bidIndex = bidIndices[i];
+            EncryptedBid storage b = a.bids[bidIndex];
+
+
+/ seenBidMap[0:len-1] should be full
+        for (uint256 i; i < seenBidMap.length - 1; i++) {
+            if (seenBidMap[i] != type(uint256).max) {
+                revert InvalidState();
+            }
+        }
+
+PROOF OF CONCEPT :
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L302
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L244
+
+3) 
+
+SizeSealed.sol  #L258
+
+When we using "&&" Operator if any one condition FALSE over all if statement become false . So if first condition FALSE then not needed to check second condition. It would cost more gas fee . Second condition only checked if first condition is TRUE. 
+
+&& LOGIC :
+
+false * fase=false
+true*false=false
+false *true=false
+true * true = true 
+
+
+ // If the bidder public key isn't on the bn128 curve
+            if (sharedPoint.x == 1 && sharedPoint.y == 1) continue;
+
+PROOF OF CONCEPT :
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L258
 
