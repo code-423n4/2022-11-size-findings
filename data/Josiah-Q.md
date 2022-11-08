@@ -70,3 +70,34 @@ Here are some of the instance found.
 [Lines 28 - 43](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L28-L43)
 [Lines 466 - 480](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L466-L480)
 
+## INSUFFICIENT DOCUMENTATION
+The code base lacks code documentation, high-level descriptions, and examples, making the contracts difficult to review and increasing the likelihood of user mistakes. The documentation would benefit from more detail.
+
+Review and properly document the above mentioned aspects of the code base. And, consider writing a formal specification of the protocol.
+
+## THRESHOLD LIMIT CHECKS
+Certain parameters of the contracts can be configured to edge/extreme values, causing a variety of issues and breaking expected interactions within/between contracts. Here are the six instances found pertaining to critical parameter that lacks  robust sanity/threshold/limit checks.
+
+[Lines 60 - 82](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L60-L82)
+
+For instance, the check would pass if `timings.endTimestamp` is set to only one second greater than `block.timestamp` in line 60. This could have been prevented if a proper threshold value had been to `timings.endTimestamp`.
+
+## CONDITIONAL CHECKS
+Checks should be done as early as possible in a code block to prevent unnecessary code executions prior to it that would not only be reverted but also incur a wastage of gas. Here is one instance found that should at least be inserted before line 148.
+
+[Line 155 - 159](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L155-L159)   
+
+## SPELLING CORRECTIONS
+
+[Line 112](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L112)
+
+```
+    @ runnning should be corrected to running
+    /// @notice Bid on a runnning auction
+```
+[Line 431](https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L431)
+
+```
+    @ futher should be corrected further
+        // Prevent any futher access to this EncryptedBid
+```
