@@ -95,3 +95,10 @@ File : 2022-11-size/src/interfaces/ISizeSealed.sol
 98  :           SafeTransferLib.safeTransferFrom(
                   ERC20(auctionParams.baseToken), msg.sender, address(this), auctionParams.totalBaseAmount
                    );
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7) USE external keyword INSTEAD public . external SAVES THE GAS USAGE  COMPARE TO public
+
+File : 2022-11-size/src/interfaces/ISizeSealed.sol
+
+466 :         function computeCommitment(bytes32 message) public pure returns (bytes32) {
