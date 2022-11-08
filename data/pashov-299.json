@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "pashov",
+  "risk": "2",
+  "title": "Auction can be DoS-ed with too many bids",
+  "issueId": 299,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/299"
+}
