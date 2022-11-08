@@ -4,6 +4,7 @@ ECCMath.sol  #L27
 
  In IF statement we don't want to check both conditions. Here using "||" operator so if first CONDITION true then we can skip all other conditions. Second condition only checked when the first condition is false. In this way can save gas fee 
 
+CODE :
 
 /// @notice calculates point^scalar
     /// @dev returns (1,1) if the ecMul failed or invalid parameters
@@ -66,6 +67,7 @@ SizeSealed.sol #L302  #L244
 
 In For loop we can use ++i Instead of i++ . ++i Consume less gas fee compared to i++ . There is difference in ++i and i++. 
 
+CODE :
 
 // Fill orders from highest price to lowest price
         for (uint256 i; i < bidIndices.length; i++) {
@@ -85,6 +87,8 @@ PROOF OF CONCEPT :
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L302
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L244
 
+----------------------------------------------------------------------------------------------------------------------------------------
+
 3) 
 
 SizeSealed.sol  #L258
@@ -98,6 +102,7 @@ true*false=false
 false *true=false
 true * true = true 
 
+CODE :
 
  // If the bidder public key isn't on the bn128 curve
             if (sharedPoint.x == 1 && sharedPoint.y == 1) continue;
@@ -106,3 +111,18 @@ PROOF OF CONCEPT :
 
 https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L258
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+4)  SizeSealed.sol  #l294
+
+In this code instead "data.filledBase += baseAmount" we can use   " data.filledBase=data.filledBase + baseAmount. += consumes more gas fee than normal addition. In this way we can reduce our gas fee 
+
+CODE :
+
+            b.filledBaseAmount = baseAmount;
+            data.filledBase += baseAmount;
+        }
+
+PROOF OF CONCEPT :
+
+https://github.com/code-423n4/2022-11-size/blob/main/src/SizeSealed.sol#L294
