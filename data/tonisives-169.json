@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "tonisives",
+  "risk": "3",
+  "title": "Bid does not account for possible ERC20 transfer fee",
+  "issueId": 169,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/169"
+}
