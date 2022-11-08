@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "gz627",
+  "risk": "3",
+  "title": "A bidder can buy `baseToken` with low price by exploiting the DOS prevention measure",
+  "issueId": 275,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/275"
+}
