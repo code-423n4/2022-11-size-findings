@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "KIntern_NA",
+  "risk": "3",
+  "title": "Malicious seller can finalize his/her auction without changing `data.lowestQuote` , then auction's state will not be updated to `States.finalized` and this seller can repeat finalize or cancel auction to steal tokens from contract",
+  "issueId": 200,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/200"
+}
