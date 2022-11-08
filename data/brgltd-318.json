@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "brgltd",
+  "risk": "2",
+  "title": "# Solmate's SafeTransferLib won't check if token has code, which can affect transfers in `SizeSealed`",
+  "issueId": 318,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/318"
+}
