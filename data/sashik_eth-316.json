@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "sashik_eth",
+  "risk": "3",
+  "title": "quoteToken could be fee-on-transfer token",
+  "issueId": 316,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/316"
+}
