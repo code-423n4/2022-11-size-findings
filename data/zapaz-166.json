@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "zapaz",
+  "risk": "2",
+  "title": "BaseAmount value could cause overflow",
+  "issueId": 166,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/166"
+}
