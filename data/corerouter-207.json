@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "corerouter",
+  "risk": "2",
+  "title": "A malicious bidder can successfully bid the auction with lowest possible price for hot project, or make the auction fail by bidding the auction and then cancelling it, caused by 1000 bid limit",
+  "issueId": 207,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/207"
+}
