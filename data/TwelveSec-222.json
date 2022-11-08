@@ -1,0 +1,8 @@
+{
+  "contest": 180,
+  "handle": "TwelveSec",
+  "risk": "2",
+  "title": "Failed transfer with low level call could be overlooked",
+  "issueId": 222,
+  "issueUrl": "https://github.com/code-423n4/2022-11-size-findings/issues/222"
+}
