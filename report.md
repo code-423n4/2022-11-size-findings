@@ -1,3 +1,11 @@
+---
+sponsor: "SIZE"
+slug: "2022-11-size"
+date: "2023-01-09"
+title: "SIZE contest"
+findings: "https://github.com/code-423n4/2022-11-size-findings/issues"
+contest: 180
+---
 
 # Overview
 
